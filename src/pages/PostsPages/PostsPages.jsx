@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { CreateCard } from "../../components/CardComponent/CardComponent"; // Import del componente card
 
-const apiUrl = "http://localhost:3000/foods"; // URL dell'API
+const apiUrl = "http://localhost:3001/foods"; // URL dell'API
 
 export const MainComponent = () => {
     // Stato per i dati e per la gestione del form
