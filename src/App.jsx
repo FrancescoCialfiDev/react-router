@@ -6,6 +6,7 @@ import { DefaultLayout } from "./layout/DefaultLayout"; // Importiamo il layout 
 import { PostPage } from "./pages/PostsPages/PostPage"; // Importiamo la pagina che mostra un singolo post
 import { ErrorPage } from "./pages/ErrorPages/ErrorPage"; // Importiamo la pagina di errore
 
+
 export const App = () => (
   <>
     <BrowserRouter>                                        {/* BrowserRouter avvolge tutta l'app e abilita il routing */}

@@ -20,6 +20,9 @@ export const HeaderComponent = () => (
                         <li className="nav-item">
                             <Link to="/contact" className="nav-link text-white">Contatti</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link to="/addPosts" className="nav-link text-white">Crea Post</Link>
+                        </li>
                     </ul>
                     <form className="d-flex" role="search">
                         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />

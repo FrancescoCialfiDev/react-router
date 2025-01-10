@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { CreateCard } from "../../components/CardComponent/CardComponent"; // Import del componente card
 
+
 const apiUrl = "http://localhost:3000/foods"; // URL dell'API
 
 export const MainComponent = () => {
@@ -83,8 +84,7 @@ export const MainComponent = () => {
 
     return (
         <main className="d-flex">
-            {/* Form Section */}
-            <div className="formContainer">
+            < div className="formContainer" >
                 <form className="p-5 bg-white rounded-3 m-3" onSubmit={submitFunction}>
                     <div className="form-group">
                         <label htmlFor="titleForm"><span className="fw-bold">Card&apos;s Name</span></label>
@@ -103,7 +103,7 @@ export const MainComponent = () => {
                     </div>
                     <button type="submit" className="btn btn-primary mt-2">Submit</button>
                 </form>
-            </div>
+            </ div >
             {/* Card Section */}
             <div className="container">
                 <div className="row align-items-center">
