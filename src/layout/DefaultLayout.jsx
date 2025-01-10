@@ -5,9 +5,9 @@ import { Outlet } from "react-router-dom"; // Punto di caricamento per i compone
 
 export const DefaultLayout = () => (
     <div>
-        <HeaderComponent />
-        <Outlet /> {/* Componente figlio verrà caricato qui */}
-        <FooterComponent />
+        <HeaderComponent />            {/* Header Default */}
+        <Outlet />                     {/* Componente figlio verrà caricato qui */}
+        <FooterComponent />            {/* Footer Default */}
     </div>
 );
 

@@ -1,28 +1,35 @@
-import { HomePage } from "./pages/HomePage/HomePage";
-import { MainComponent } from "./pages/PostsPages/PostsPages"; // Importiamo il comnponente MainComponent
-import { BrowserRouter, Routes, Route } from "react-router-dom"; // Dopo aver installato il pacchetto react-router-dom lo importiamo nel nostro file app.jsx
-import { ContactPage } from "./pages/ContatcPage.jsx/ContactPage"; // Importiamo la pagina di contatto
-import { DefaultLayout } from "./layout/DefaultLayout";
-import { PostPage } from "./pages/PostsPages/PostPage";
-import { ErrorPage } from "./pages/ErrorPages/ErrorPage";
+import { HomePage } from "./pages/HomePage/HomePage"; // Importiamo la pagina Home
+import { MainComponent } from "./pages/PostsPages/PostsPages"; // Importiamo il componente principale dei post
+import { BrowserRouter, Routes, Route } from "react-router-dom"; // Importiamo le funzionalità di routing
+import { ContactPage } from "./pages/ContatcPage.jsx/ContactPage"; // Importiamo la pagina dei contatti
+import { DefaultLayout } from "./layout/DefaultLayout"; // Importiamo il layout principale
+import { PostPage } from "./pages/PostsPages/PostPage"; // Importiamo la pagina che mostra un singolo post
+import { ErrorPage } from "./pages/ErrorPages/ErrorPage"; // Importiamo la pagina di errore
 
 export const App = () => (
   <>
-    <BrowserRouter>
+    <BrowserRouter>                                        {/* BrowserRouter avvolge tutta l'app e abilita il routing */}
       <Routes>
-        <Route Component={DefaultLayout}>
-          <Route path="/" Component={HomePage} />
-          <Route path="/contact">
-            <Route index Component={ContactPage} />
+
+        <Route Component={DefaultLayout}>                  {/*layout di default */}
+
+          <Route path="/" element={<HomePage />} />        {/* Home page */}
+
+          <Route path="/contact">                          {/* Pagina dei contatti */}
+            <Route index element={<ContactPage />} />
           </Route>
-          <Route path="/posts">
-            <Route index Component={MainComponent} />
-            <Route path=":id" Component={PostPage} />
+
+          <Route path="/posts">                            {/* Gestione dei post */}
+            <Route index element={<MainComponent />} />    {/* Pagina principale dei post */}
+            <Route path=":id" element={<PostPage />} />    {/* Pagina per un singolo post, identificato da un id */}
+            <Route path="*" element={<ErrorPage />} />     {/* Pagina di errore per percorsi non validi sotto /posts */}
           </Route>
+
         </Route>
-        <Route path="*" Component={ErrorPage}></Route>
+
+        <Route path="*" element={<ErrorPage />} />         {/* Rotta globale per tutti i percorsi non validi */}
+
       </Routes>
     </BrowserRouter>
   </>
 );
-
