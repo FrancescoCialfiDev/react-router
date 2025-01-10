@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"; // Dopo aver in
 import { ContactPage } from "./pages/ContatcPage.jsx/ContactPage"; // Importiamo la pagina di contatto
 import { DefaultLayout } from "./layout/DefaultLayout";
 import { PostPage } from "./pages/PostsPages/PostPage";
+import { ErrorPage } from "./pages/ErrorPages/ErrorPage";
 
 export const App = () => (
   <>
@@ -19,6 +20,7 @@ export const App = () => (
             <Route path=":id" Component={PostPage} />
           </Route>
         </Route>
+        <Route path="*" Component={ErrorPage}></Route>
       </Routes>
     </BrowserRouter>
   </>
