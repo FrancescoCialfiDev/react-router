@@ -18,7 +18,6 @@ export const PostPage = () => {
     }
 
     useEffect(getData, [id])
-    console.log(post)
     return (
 
         <main>

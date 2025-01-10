@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-// Creiamo il component Card e passiamo data come props e la funzione removeClick
+const url = import.meta.env.VITE_URL_POSTS;
+const endPoint = "/posts"
 
 export const CreateCard = ({ data, remove }) => (
-
     data.map((element) => (
         element.published && ( // Questa condizione ci permettere di mostrare le card se la proprietà published risulta "true"
             <div className="col-6 col-md-4 col-lg-3" key={element.id}>
@@ -12,7 +12,7 @@ export const CreateCard = ({ data, remove }) => (
                         <h5 className="card-title">{element.title}</h5>
                         <p className="card-text m-0">{element.content}</p>
                         <p className="m-0">{"Available:" + " " + String(element.published)}</p>
-                        <Link to={`/posts/${element.id}`} className="btn btn-primary">Show Details</Link>
+                        <Link to={`${url}${endPoint}/${element.id}`} className="btn btn-primary">Show Details</Link>
                         <button type="button" className="btn btn-danger mx-1" onClick={() => remove(element.id)}>Delete</button>
                     </div>
                 </div>
