@@ -1,9 +1,12 @@
 // Creiamo il component Card e passiamo data come props e la funzione removeClick
 
+import { Link } from "react-router-dom";
+
 export const SingleCardShow = ({ data }) => (
 
     data.map((element) => (
-        element.published && ( // Questa condizione ci permettere di mostrare le card se la proprietà published risulta "true"
+        // element.published && ( // Questa condizione ci permettere di mostrare le card se la proprietà published risulta "true"
+        <>
             <div className="col-6 col-md-4 col-lg-3" key={element.id}>
                 <div className="card" id={element.id}>
                     <img src={element.image} className="card-img-top" alt={element.title} />
@@ -12,8 +15,15 @@ export const SingleCardShow = ({ data }) => (
                         <p className="card-text m-0">{element.content}</p>
                     </div>
                 </div>
+                <div className="d-flex justify-content-center">
+                    <Link to={"/posts"} className="btn btn-primary mx-2">Torna alla Home</Link>
+                    <Link to={`/posts/${element.id - 1}`} className="btn btn-primary mx-1">&#8678;</Link>
+                    <Link to={`/posts/${element.id + 1}`} className="btn btn-primary mx-1">&#8680;</Link>
+                </div>
             </div>
-        )
+
+        </>
+        // )
     )
     ));
 
