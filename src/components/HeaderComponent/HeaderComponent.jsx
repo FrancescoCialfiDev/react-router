@@ -21,7 +21,7 @@ export const HeaderComponent = () => (
                             <Link to="/contact" className="nav-link text-white">Contatti</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/addPosts" className="nav-link text-white">Crea Post</Link>
+                            <Link to="/posts/addPost" className="nav-link text-white">Crea Post</Link>
                         </li>
                     </ul>
                     <form className="d-flex" role="search">

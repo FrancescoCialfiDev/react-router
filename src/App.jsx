@@ -5,6 +5,7 @@ import { ContactPage } from "./pages/ContatcPage.jsx/ContactPage"; // Importiamo
 import { DefaultLayout } from "./layout/DefaultLayout"; // Importiamo il layout principale
 import { PostPage } from "./pages/PostsPages/PostPage"; // Importiamo la pagina che mostra un singolo post
 import { ErrorPage } from "./pages/ErrorPages/ErrorPage"; // Importiamo la pagina di errore
+import { FormPage } from "./pages/FormPage.jsx/FormPage";
 
 
 export const App = () => (
@@ -20,10 +21,11 @@ export const App = () => (
             <Route index element={<ContactPage />} />
           </Route>
 
-          <Route path="/posts">                            {/* Gestione dei post */}
-            <Route index element={<MainComponent />} />    {/* Pagina principale dei post */}
-            <Route path=":id" element={<PostPage />} />    {/* Pagina per un singolo post, identificato da un id */}
-            <Route path="*" element={<ErrorPage />} />     {/* Pagina di errore per percorsi non validi sotto /posts */}
+          <Route path="/posts">                             {/* Gestione dei post */}
+            <Route index element={<MainComponent />} />     {/* Pagina principale dei post */}
+            <Route path="addPost" element={<FormPage />} /> {/* Pagina per aggiungere un  post */}
+            <Route path=":id" element={<PostPage />} />     {/* Pagina per un singolo post, identificato da un id */}
+            <Route path="*" element={<ErrorPage />} />      {/* Pagina di errore per percorsi non validi sotto /posts */}
           </Route>
 
         </Route>
